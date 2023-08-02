@@ -7,6 +7,8 @@ fn main() {
 
     cbindgen::Builder::new()
       .with_crate(cargo_dir)
+      .with_pragma_once(true)
+      .exclude_item("lata_add")
       .with_language(cbindgen::Language::C)
       .generate()
       .expect("Unable to generate bindings")
